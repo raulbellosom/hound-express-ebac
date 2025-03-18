@@ -1,0 +1,169 @@
+/* Reset de estilos */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base */
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #ffffff;
+  color: #091e3f; /* Azul noche para textos generales */
+  line-height: 1.6;
+}
+
+/* Header Section */
+.header {
+  width: 100%;
+}
+
+.header__top {
+  background-color: #091e3f; /* Azul claro para la parte superior del header */
+  color: #ffffff;
+  padding: 10px 0;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* Navigation Styles */
+.main__nav {
+  background-color: #091e3f; /* Fondo azul noche para el menú */
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Banner */
+
+.banner__container {
+  width: 100%;
+  height: calc(100vh - 945px);
+}
+
+/* Logo container dentro de la navegación */
+.header__banner {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  position: relative;
+}
+
+/* Logo */
+.header__logo img {
+  max-width: 200px;
+  min-width: 100px;
+  width: 100%;
+  height: auto;
+}
+
+/* Lista de navegación */
+.nav__list {
+  display: flex;
+  list-style: none;
+}
+
+.nav__item {
+  margin: 0 1rem;
+}
+
+.nav__link {
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff; /* Texto en blanco */
+  transition: color 0.3s ease;
+}
+
+.nav__link:hover {
+  color: #6ac6de; /* Efecto hover con azul claro */
+}
+
+/* Contenedor de la imagen del banner */
+.banner__image-container {
+  width: 100%;
+  position: relative;
+}
+
+.banner__image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Bloque de contacto sobre la imagen del banner */
+.banner__contact {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  color: #ffffff;
+  padding: 1vw 10px;
+  border-radius: 5px;
+  font-size: 1vw;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 4vw;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Sección de contacto: Teléfono */
+.contact__phone {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.banner__icon {
+  background: #ffffff;
+  padding: 0.3vw;
+  border-radius: 50%;
+  width: 2.4vw;
+  height: auto;
+}
+
+.phone__number {
+  font-size: 1vw;
+}
+
+/* Sección de contacto: Redes Sociales */
+.contact__social {
+  display: flex;
+  align-items: center;
+  gap: 1vw;
+}
+
+.social__text {
+  font-size: 1vw;
+}
+
+.social__icon {
+  transition: transform 0.3s ease;
+}
+
+.social__icon:hover {
+  transform: scale(1.1);
+}
+
+/* Main Content */
+main {
+  padding: 20px;
+}
+
+.section {
+  margin-bottom: 40px;
+}
+
+/* Footer Section */
+.footer {
+  background-color: #091e3f;
+  color: #ffffff;
+  text-align: center;
+  padding: 15px;
+  font-size: 0.9rem;
+}
