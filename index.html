@@ -80,28 +80,309 @@
           </div>
         </div>
       </div>
+      <div class="subbanner__container">
+        <div class="subbanner__content">
+          <h1 class="subbanner__title">¿Por qué Hound Express?</h1>
+          <p class="subbanner__subtitle">
+            Somos más que tus expertos en logística de confianza
+          </p>
+          <p class="subbanner__description">
+            En Hound Express nos dedicamos a ofrecer un servicio de mensajería y
+            paquetería rápido y seguro. Con más de 10 años de experiencia en el
+            sector, garantizamos la entrega de tus envíos en el menor tiempo
+            posible. Nuestro equipo de profesionales está comprometido con la
+            satisfacción del cliente y la seguridad de tus paquetes.
+          </p>
+        </div>
+        <div>
+          <img
+            src="./img/header_sending_2.png"
+            alt="Header Sending"
+            class="subbanner__img"
+          />
+        </div>
+      </div>
     </header>
     <!-- Main Content -->
     <main>
-      <section id="register" class="section register">
+      <section id="register" class="register__container">
         <!-- Registro de Guías -->
+        <div class="register-image__container"></div>
+        <div class="form__container">
+          <h2 class="form__title">Registro de Guías</h2>
+          <p class="form__subtitle">
+            Completa el siguiente formulario para registrar una nueva guía.
+          </p>
+          <form class="form__content" action="#" method="POST">
+            <div class="form__group">
+              <label for="guide-name" class="form__label"
+                >Número de guía:</label
+              >
+              <input
+                type="text"
+                id="guide-name"
+                name="guide-name"
+                class="form__input"
+                required
+              />
+            </div>
+            <div class="form-inputs__group">
+              <div class="form__group">
+                <label for="guide-lastname" class="form__label">Origen:</label>
+                <input
+                  type="text"
+                  id="guide-lastname"
+                  name="guide-lastname"
+                  class="form__input"
+                  required
+                />
+              </div>
+              <div class="form__group">
+                <label for="guide-address" class="form__label">Destino:</label>
+                <input
+                  type="text"
+                  id="guide-address"
+                  name="guide-address"
+                  class="form__input"
+                  required
+                />
+              </div>
+            </div>
+            <!-- destinatario -->
+            <div class="form__group">
+              <label for="guide-recipient" class="form__label"
+                >Destinatario:</label
+              >
+              <input
+                type="text"
+                id="guide-recipient"
+                name="guide-recipient"
+                class="form__input"
+                required
+              />
+            </div>
+            <!-- fecha de creacion -->
+            <div class="form-inputs__group">
+              <div class="form__group">
+                <label for="guide-date" class="form__label"
+                  >Fecha de creación:</label
+                >
+                <input
+                  type="date"
+                  id="guide-date"
+                  name="guide-date"
+                  class="form__input"
+                  required
+                />
+              </div>
+              <!-- select (pendiente, en transito, entregado) -->
+
+              <div class="form__group">
+                <label for="guide-status" class="form__label">Estado:</label>
+                <select
+                  id="guide-status"
+                  name="guide-status"
+                  class="form__input"
+                  required
+                >
+                  <option value="pendiente">Pendiente</option>
+                  <option value="en_transito">En Tránsito</option>
+                  <option value="entregado">Entregado</option>
+                </select>
+              </div>
+            </div>
+            <button type="submit" class="form__button">Registrar Guía</button>
+          </form>
+        </div>
       </section>
-      <section id="general-status" class="section general-status">
+      <section id="general-status" class="general-status">
         <!-- Estado General -->
+        <div class="status__container">
+          <h2 class="status__title">Estado General</h2>
+          <p class="status__description">
+            Consulta el estado actual de las guías registradas en nuestro
+            sistema. Aquí puedes ver el total de guías activas, las que están en
+            tránsito y las que ya han sido entregadas.
+          </p>
+          <div class="status__cards">
+            <div class="status__card">
+              <h3 class="status__card-title">Total de Guías Activas</h3>
+              <p class="status__card-value">100</p>
+            </div>
+            <div class="status__card">
+              <h3 class="status__card-title">Guías en Tránsito</h3>
+              <p class="status__card-value">50</p>
+            </div>
+            <div class="status__card">
+              <h3 class="status__card-title">Guías Entregadas</h3>
+              <p class="status__card-value">30</p>
+            </div>
+          </div>
+        </div>
       </section>
-      <section id="guide-list" class="section guide-list">
+      <section id="guide-list" class="guide-list">
         <!-- Lista de Guías -->
+        <div class="guide-list__container">
+          <h2 class="guide-list__title">Lista de Guías</h2>
+          <p class="guide-list__description">
+            Aquí puedes consultar el estado actual de las guías registradas, su
+            origen, destino y la fecha de la última actualización.
+          </p>
+          <div class="guide-list__search">
+            <form action="#" method="GET" class="search-form">
+              <input
+                type="text"
+                name="search"
+                id="search"
+                class="search-form__input"
+                placeholder="Buscar por número de guía, estado, origen o destino"
+              />
+              <button type="submit" class="search-form__button">Buscar</button>
+            </form>
+          </div>
+          <table class="guide-list__table">
+            <thead>
+              <tr>
+                <th>Número de Guía</th>
+                <th>Estado</th>
+                <th>Origen</th>
+                <th>Destino</th>
+                <th>Última Actualización</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Guía en Pendiente -->
+              <tr>
+                <td>001</td>
+                <td><span class="status status--pending">Pendiente</span></td>
+                <td>Puerto Vallarta</td>
+                <td>Guadalajara</td>
+                <td>2025-04-08</td>
+                <td>
+                  <button class="guide-list__button">Actualizar Estado</button>
+                  <button
+                    class="guide-list__button guide-list__button--secondary"
+                  >
+                    Ver Historial
+                  </button>
+                </td>
+              </tr>
+              <!-- Guías en Tránsito -->
+              <tr>
+                <td>002</td>
+                <td>
+                  <span class="status status--in-transit">En Tránsito</span>
+                </td>
+                <td>Monterrey</td>
+                <td>Guadalajara</td>
+                <td>2025-04-07</td>
+                <td>
+                  <button class="guide-list__button">Actualizar Estado</button>
+                  <button
+                    class="guide-list__button guide-list__button--secondary"
+                  >
+                    Ver Historial
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>003</td>
+                <td>
+                  <span class="status status--in-transit">En Tránsito</span>
+                </td>
+                <td>Ciudad Guzman</td>
+                <td>Ciudad de México</td>
+                <td>2025-04-06</td>
+                <td>
+                  <button class="guide-list__button">Actualizar Estado</button>
+                  <button
+                    class="guide-list__button guide-list__button--secondary"
+                  >
+                    Ver Historial
+                  </button>
+                </td>
+              </tr>
+              <!-- Guías Entregadas -->
+              <tr>
+                <td>004</td>
+                <td><span class="status status--delivered">Entregado</span></td>
+                <td>Zacatecas</td>
+                <td>Salt Lake, USA</td>
+                <td>2025-04-05</td>
+                <td>
+                  <button class="guide-list__button">Actualizar Estado</button>
+                  <button
+                    class="guide-list__button guide-list__button--secondary"
+                  >
+                    Ver Historial
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>005</td>
+                <td><span class="status status--delivered">Entregado</span></td>
+                <td>Acapulco</td>
+                <td>Oaxaca</td>
+                <td>2025-04-04</td>
+                <td>
+                  <button class="guide-list__button">Actualizar Estado</button>
+                  <button
+                    class="guide-list__button guide-list__button--secondary"
+                  >
+                    Ver Historial
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </section>
-      <section id="search-guide" class="section search-guide">
+      <section id="search-guide" class="search-guide">
         <!-- Buscar Guías -->
       </section>
-      <section id="guide-history" class="section guide-history">
+      <section id="guide-history" class="guide-history">
         <!-- Historial de Guías -->
       </section>
     </main>
     <!-- Footer Section -->
     <footer id="footer" class="footer">
-      <!-- Contenido del Footer -->
+      <div class="footer__container">
+        <p class="footer__copyright">
+          &copy; 2025 Hound Express. Todos los derechos reservados.
+        </p>
+        <div class="footer__links">
+          <a href="#privacy-policy" class="footer__link"
+            >Política de Privacidad</a
+          >
+          <a href="#terms" class="footer__link">Términos y Condiciones</a>
+          <a href="#contact" class="footer__link">Contacto</a>
+        </div>
+        <div class="footer__social">
+          <p class="footer__social-text">Síguenos en:</p>
+          <a href="#" class="footer__social-link">
+            <img
+              src="./img/icon-facebook.svg"
+              alt="Facebook"
+              class="footer__icon"
+            />
+          </a>
+          <a href="#" class="footer__social-link">
+            <img
+              src="./img/icon-whatsapp.svg"
+              alt="Twitter"
+              class="footer__icon"
+            />
+          </a>
+          <a href="#" class="footer__social-link">
+            <img
+              src="./img/instagram-round.svg"
+              alt="Instagram"
+              class="footer__icon"
+            />
+          </a>
+        </div>
+      </div>
     </footer>
   </body>
 </html>
