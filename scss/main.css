@@ -337,18 +337,18 @@ main {
   background-color: #f9f9f9;
 }
 
-.register__container {
+.register {
   display: flex;
   justify-items: center;
   padding: 10vh;
 }
 @media (max-width: 480px) {
-  .register__container {
+  .register {
     flex-direction: column;
     padding: 40px 10px;
   }
 }
-.register__image-container {
+.register__image {
   width: 100%;
   max-width: 50%;
   height: auto;
@@ -364,7 +364,7 @@ main {
   border-bottom-right-radius: 0;
 }
 @media (max-width: 480px) {
-  .register__image-container {
+  .register__image {
     max-width: 100%;
     border-radius: 10px;
     border-bottom-left-radius: 0;
@@ -373,55 +373,54 @@ main {
   }
 }
 
-.general-status {
+.stats {
   padding: 5vh 20px;
   background-color: #f9f9f9;
 }
 @media (max-width: 480px) {
-  .general-status {
+  .stats {
     padding: 40px 10px;
   }
 }
-
-.status__container {
+.stats__container {
   margin: 0 auto;
   text-align: center;
 }
-.status__title {
+.stats__title {
   font-size: 2.5rem;
   color: #091e3f;
   margin-bottom: 1rem;
 }
 @media (max-width: 480px) {
-  .status__title {
+  .stats__title {
     font-size: 2rem;
   }
 }
-.status__description {
+.stats__description {
   font-size: 1.2rem;
   color: #6c757d;
   margin-bottom: 2rem;
   line-height: 1.6;
 }
 @media (max-width: 480px) {
-  .status__description {
+  .stats__description {
     font-size: 1rem;
     margin-bottom: 20px;
   }
 }
-.status__cards {
+.stats__cards {
   display: flex;
   justify-content: center;
   gap: 2rem;
   flex-wrap: wrap;
 }
 @media (max-width: 480px) {
-  .status__cards {
+  .stats__cards {
     flex-direction: column;
     gap: 20px;
   }
 }
-.status__card {
+.stats__card {
   background-color: #ffffff;
   border-radius: 10px;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
@@ -431,11 +430,11 @@ main {
   max-width: 400px;
   text-align: center;
 }
-.status__card:hover {
+.stats__card:hover {
   transform: translateY(-10px);
   box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.2);
 }
-.status__card-title {
+.stats__card-title {
   font-size: 1.5rem;
   color: #6ac6de;
   margin-bottom: 10px;
@@ -443,17 +442,17 @@ main {
   letter-spacing: 1px;
 }
 @media (max-width: 480px) {
-  .status__card-title {
+  .stats__card-title {
     font-size: 1.2rem;
   }
 }
-.status__card-value {
+.stats__card-value {
   font-size: 2.5rem;
   color: #091e3f;
   font-weight: bold;
 }
 @media (max-width: 480px) {
-  .status__card-value {
+  .stats__card-value {
     font-size: 2rem;
   }
 }
@@ -506,6 +505,37 @@ main {
 @media (max-width: 480px) {
   .guide-list__search {
     justify-content: center;
+  }
+}
+.guide-list__form {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  gap: 10px;
+  width: 100%;
+}
+@media (max-width: 480px) {
+  .guide-list__form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+.guide-list__input {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+.guide-list__input:focus {
+  border-color: #6ac6de;
+  outline: none;
+}
+@media (max-width: 480px) {
+  .guide-list__input {
+    max-width: 100%;
   }
 }
 
@@ -622,12 +652,12 @@ main {
 .btn--secondary:hover {
   background-color: #0b2a4a;
 }
-.btn--search, .search-form__button {
+.btn--search {
   padding: 10px 20px;
   background-color: #6ac6de;
   color: #ffffff;
 }
-.btn--search:hover, .search-form__button:hover {
+.btn--search:hover {
   background-color: #5ab8e0;
 }
 .btn--guide {
@@ -744,37 +774,6 @@ main {
   color: #091e3f;
 }
 
-.search-form {
-  display: flex;
-  justify-content: start;
-  align-items: start;
-  gap: 10px;
-  width: 100%;
-}
-@media (max-width: 480px) {
-  .search-form {
-    flex-direction: column;
-    align-items: stretch;
-  }
-}
-.search-form__input {
-  width: 100%;
-  max-width: 400px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  font-size: 1rem;
-  transition: border-color 0.3s ease;
-}
-.search-form__input:focus {
-  border-color: #6ac6de;
-  outline: none;
-}
-@media (max-width: 480px) {
-  .search-form__input {
-    max-width: 100%;
-  }
-}
 .status {
   display: inline-block;
   padding: 5px 10px;

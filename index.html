@@ -112,9 +112,9 @@
     </header>
     <!-- Main Content -->
     <main>
-      <section id="register" class="register__container">
+      <section id="register" class="register">
         <!-- Registro de Guías -->
-        <div class="register__image-container"></div>
+        <div class="register__image"></div>
         <div class="form__container">
           <h2 class="form__title">Registro de Guías</h2>
           <p class="form__subtitle">
@@ -204,27 +204,27 @@
           </form>
         </div>
       </section>
-      <section id="general-status" class="general-status">
+      <section id="general-status" class="stats">
         <!-- Estado General -->
-        <div class="status__container">
-          <h2 class="status__title">Estado General</h2>
-          <p class="status__description">
+        <div class="stats__container">
+          <h2 class="stats__title">Estado General</h2>
+          <p class="stats__description">
             Consulta el estado actual de las guías registradas en nuestro
             sistema. Aquí puedes ver el total de guías activas, las que están en
             tránsito y las que ya han sido entregadas.
           </p>
-          <div class="status__cards">
-            <div class="status__card">
-              <h3 class="status__card-title">Total de Guías Activas</h3>
-              <p class="status__card-value">100</p>
+          <div class="stats__cards">
+            <div class="stats__card">
+              <h3 class="stats__card-title">Total de Guías Activas</h3>
+              <p class="stats__card-value">100</p>
             </div>
-            <div class="status__card">
-              <h3 class="status__card-title">Guías en Tránsito</h3>
-              <p class="status__card-value">50</p>
+            <div class="stats__card">
+              <h3 class="stats__card-title">Guías en Tránsito</h3>
+              <p class="stats__card-value">50</p>
             </div>
-            <div class="status__card">
-              <h3 class="status__card-title">Guías Entregadas</h3>
-              <p class="status__card-value">30</p>
+            <div class="stats__card">
+              <h3 class="stats__card-title">Guías Entregadas</h3>
+              <p class="stats__card-value">30</p>
             </div>
           </div>
         </div>
@@ -238,12 +238,12 @@
             origen, destino y la fecha de la última actualización.
           </p>
           <div class="guide-list__search">
-            <form action="#" method="GET" class="search-form">
+            <form action="#" method="GET" class="guide-list__form">
               <input
                 type="text"
                 name="search"
                 id="search"
-                class="search-form__input"
+                class="guide-list__input"
                 placeholder="Buscar por número de guía, estado, origen o destino"
               />
               <button type="submit" class="btn btn--search">Buscar</button>
