@@ -1,0 +1,8 @@
+// Functions
+@function rem($pixels) {
+  @return #{$pixels / 16}rem;
+}
+
+@function em($pixels, $base: 16) {
+  @return #{$pixels / $base}em;
+}

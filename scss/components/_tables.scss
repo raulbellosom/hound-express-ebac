@@ -1,0 +1,125 @@
+// Table styles
+.table {
+  &--guide-list {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    background-color: $background-color;
+    box-shadow: $box-shadow;
+    border-radius: $border-radius;
+    overflow: hidden;
+
+    th,
+    td {
+      padding: 15px;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+
+      @include mobile {
+        padding: $spacing-sm;
+        font-size: 0.8rem;
+      }
+    }
+
+    th {
+      background-color: $primary-color;
+      color: $background-color;
+      text-transform: uppercase;
+      font-size: 1rem;
+
+      @include mobile {
+        font-size: 0.8rem;
+      }
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    tr:hover {
+      background-color: #e9ecef;
+    }
+
+    @include mobile {
+      display: block;
+      background: transparent;
+      box-shadow: none;
+
+      thead {
+        display: none;
+      }
+
+      tbody {
+        display: block;
+        background: transparent;
+      }
+
+      tr {
+        display: block;
+        background-color: $background-color;
+        border: 1px solid #e0e0e0;
+        margin-bottom: $spacing-md;
+        padding: $spacing-md;
+        border-radius: $border-radius;
+        box-shadow: $box-shadow;
+        position: relative;
+
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: $box-shadow-hover;
+        }
+      }
+
+      td {
+        display: block;
+        text-align: left;
+        padding: $spacing-xs 0;
+        border-bottom: none;
+        line-height: 1.4;
+
+        &:first-child {
+          font-size: 1.1rem;
+          font-weight: bold;
+          color: $primary-color;
+          margin-bottom: $spacing-xs;
+          padding-bottom: $spacing-xs;
+          border-bottom: 2px solid $secondary-color;
+        }
+
+        &:nth-child(2) {
+          margin-bottom: $spacing-sm;
+        }
+
+        &:before {
+          content: attr(data-label) ": ";
+          font-weight: 600;
+          color: $primary-color;
+          display: inline-block;
+          min-width: 120px;
+          font-size: 0.85rem;
+        }
+
+        &:first-child:before,
+        &:last-child:before {
+          display: none;
+        }
+
+        &:last-child {
+          margin-top: $spacing-md;
+          padding-top: $spacing-sm;
+          border-top: 1px solid #f0f0f0;
+          display: flex;
+          flex-wrap: wrap;
+          gap: $spacing-xs;
+
+          .btn {
+            flex: 1;
+            min-width: 120px;
+            font-size: 0.8rem;
+            padding: $spacing-xs $spacing-sm;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+// Status badges
+.status {
+  display: inline-block;
+  padding: $spacing-xs $spacing-sm;
+  border-radius: $border-radius;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  @include mobile {
+    font-size: 0.8rem;
+    padding: 4px $spacing-xs;
+    margin-left: $spacing-xs;
+  }
+
+  &--pending {
+    background-color: $status-pending;
+    color: #212529;
+  }
+
+  &--in-transit {
+    background-color: $status-in-transit;
+    color: #ffffff;
+  }
+
+  &--delivered {
+    background-color: $status-delivered;
+    color: #ffffff;
+  }
+}

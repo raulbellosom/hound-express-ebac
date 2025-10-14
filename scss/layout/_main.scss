@@ -1,0 +1,190 @@
+// Main content styles
+main {
+  width: 100%;
+}
+
+// Section styles
+.section {
+  padding: 5vh $spacing-md;
+
+  @include mobile {
+    padding: $spacing-lg $spacing-sm;
+  }
+
+  &--gray {
+    background-color: #f9f9f9;
+  }
+}
+
+// Register section
+.register {
+  &__container {
+    display: flex;
+    justify-items: center;
+    padding: 10vh;
+
+    @include mobile {
+      flex-direction: column;
+      padding: $spacing-lg $spacing-sm;
+    }
+  }
+
+  &__image-container {
+    width: 100%;
+    max-width: 50%;
+    height: auto;
+    @include flex-center;
+    background-image: url("../img/register_guides.jpg");
+    background-size: cover;
+    background-position: center;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+
+    @include mobile {
+      max-width: 100%;
+      border-radius: $border-radius;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      min-height: 200px;
+    }
+  }
+}
+
+// General status section
+.general-status {
+  padding: 5vh $spacing-md;
+  background-color: #f9f9f9;
+
+  @include mobile {
+    padding: $spacing-lg $spacing-sm;
+  }
+}
+
+.status {
+  &__container {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  &__title {
+    font-size: 2.5rem;
+    color: $primary-color;
+    margin-bottom: 1rem;
+
+    @include mobile {
+      font-size: 2rem;
+    }
+  }
+
+  &__description {
+    font-size: 1.2rem;
+    color: $text-color;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+
+    @include mobile {
+      font-size: 1rem;
+      margin-bottom: $spacing-md;
+    }
+  }
+
+  &__cards {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+
+    @include mobile {
+      flex-direction: column;
+      gap: $spacing-md;
+    }
+  }
+
+  &__card {
+    @include card-base;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: $box-shadow-hover;
+    }
+  }
+
+  &__card-title {
+    font-size: 1.5rem;
+    color: $secondary-color;
+    margin-bottom: $spacing-sm;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    @include mobile {
+      font-size: 1.2rem;
+    }
+  }
+
+  &__card-value {
+    font-size: 2.5rem;
+    color: $primary-color;
+    font-weight: bold;
+
+    @include mobile {
+      font-size: 2rem;
+    }
+  }
+}
+
+// Guide list section
+.guide-list {
+  padding: 5vh $spacing-md 15vh;
+  background-color: #f9f9f9;
+
+  @include mobile {
+    padding: $spacing-lg $spacing-sm;
+    background-color: #f5f5f5;
+  }
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  &__title {
+    font-size: 2.5rem;
+    color: $primary-color;
+    margin-bottom: 1rem;
+
+    @include mobile {
+      font-size: 2rem;
+    }
+  }
+
+  &__description {
+    font-size: 1.2rem;
+    color: $text-color;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+
+    @include mobile {
+      font-size: 1rem;
+      margin-bottom: $spacing-md;
+    }
+  }
+
+  &__search {
+    margin-bottom: $spacing-md;
+    text-align: center;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    width: 100%;
+
+    @include mobile {
+      justify-content: center;
+    }
+  }
+}

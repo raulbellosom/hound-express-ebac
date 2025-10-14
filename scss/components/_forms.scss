@@ -1,0 +1,142 @@
+// Form components
+.form {
+  &__container {
+    @include flex-column;
+    align-items: center;
+    justify-content: center;
+    padding: 5vh $spacing-md;
+    background-color: $background-color;
+    border-radius: $border-radius;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    box-shadow: $box-shadow;
+    width: 100%;
+    margin: 0 auto;
+
+    @include mobile {
+      border-radius: $border-radius;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      padding: $spacing-lg $spacing-md;
+    }
+  }
+
+  &__content {
+    @include flex-column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 700px;
+  }
+
+  &__group {
+    @include flex-column;
+    width: 100%;
+    max-width: 700px;
+  }
+
+  &__inputs-group {
+    display: flex;
+    width: 100%;
+    gap: $spacing-md;
+
+    @include mobile {
+      flex-direction: column;
+      gap: 0;
+    }
+  }
+
+  &__title {
+    font-size: 2rem;
+    color: $primary-color;
+
+    @include mobile {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__subtitle {
+    font-size: 1.2rem;
+    color: $secondary-color;
+    margin-bottom: $spacing-md;
+
+    @include mobile {
+      font-size: 1rem;
+    }
+  }
+
+  &__label {
+    font-size: 1rem;
+    margin-bottom: $spacing-sm;
+    color: $primary-color;
+    font-weight: bold;
+  }
+
+  &__input {
+    width: 100%;
+    padding: $spacing-sm;
+    margin-bottom: $spacing-md;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color $transition;
+
+    &:focus {
+      border-color: $secondary-color;
+      outline: none;
+    }
+  }
+
+  &__button {
+    @include button-base;
+    background-color: $secondary-color;
+    color: $background-color;
+
+    &:hover {
+      background-color: #5ab8e0;
+    }
+  }
+
+  &__message {
+    margin-top: $spacing-md;
+    font-size: 1rem;
+    color: $primary-color;
+  }
+}
+
+// Search form
+.search-form {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  gap: $spacing-sm;
+  width: 100%;
+
+  @include mobile {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  &__input {
+    width: 100%;
+    max-width: 400px;
+    padding: $spacing-sm;
+    border: 1px solid #ccc;
+    border-radius: $border-radius;
+    font-size: 1rem;
+    transition: border-color $transition;
+
+    &:focus {
+      border-color: $secondary-color;
+      outline: none;
+    }
+
+    @include mobile {
+      max-width: 100%;
+    }
+  }
+
+  &__button {
+    @extend .btn--search;
+  }
+}

@@ -1,0 +1,322 @@
+// Header styles
+.header {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+
+  @include mobile {
+    min-height: auto;
+  }
+
+  &__top {
+    background-color: $primary-color;
+    color: $background-color;
+    padding: $spacing-sm 0;
+    text-align: center;
+    font-size: 0.9rem;
+
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: $spacing-sm;
+      padding: $spacing-md;
+    }
+  }
+
+  &__logo {
+    img {
+      max-width: 200px;
+      min-width: 100px;
+      width: 100%;
+      height: auto;
+
+      @include mobile {
+        max-width: 120px;
+      }
+    }
+  }
+
+  &__banner {
+    @include flex-center;
+    justify-content: start;
+    position: relative;
+
+    @include mobile {
+      flex-direction: column;
+    }
+  }
+}
+
+// Navigation styles
+.nav {
+  &__main {
+    padding: $spacing-sm $spacing-md;
+    @include flex-center;
+
+    @include mobile {
+      flex-direction: column;
+      gap: $spacing-sm;
+    }
+  }
+
+  &__list {
+    display: flex;
+    list-style: none;
+
+    @include mobile {
+      flex-direction: column;
+      gap: $spacing-xs;
+    }
+  }
+
+  &__item {
+    margin: 0 1rem;
+
+    @include mobile {
+      margin: 0;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    color: $background-color;
+    transition: color $transition;
+
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+}
+
+// Banner styles
+.banner {
+  &__container {
+    width: 100%;
+
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__image-container {
+    width: 100%;
+    position: relative;
+
+    @include mobile {
+      order: 1;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+    display: block;
+
+    @include mobile {
+      max-height: 250px;
+      object-fit: cover;
+    }
+  }
+
+  &__contact {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    color: $background-color;
+    padding: 1vw $spacing-sm;
+    border-radius: $border-radius;
+    font-size: 1vw;
+    text-transform: uppercase;
+    @include flex-center;
+    gap: 4vw;
+    cursor: pointer;
+    transition: background-color $transition;
+    z-index: 2;
+
+    @include mobile {
+      position: static;
+      transform: none;
+      flex-direction: column;
+      gap: $spacing-sm;
+      padding: $spacing-md;
+      font-size: 0.85rem;
+      background-color: $primary-color;
+      border-radius: 0;
+      order: 2;
+      width: 100%;
+    }
+  }
+
+  &__icon {
+    background: $background-color;
+    padding: 0.3vw;
+    border-radius: 50%;
+    width: 2.4vw;
+    height: auto;
+
+    @include mobile {
+      width: 25px;
+      height: 25px;
+      padding: 3px;
+    }
+  }
+}
+
+// Contact styles
+.contact {
+  &__phone {
+    @include flex-center;
+    gap: $spacing-sm;
+    text-decoration: none;
+    color: $background-color;
+
+    @include mobile {
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+
+  &__social {
+    @include flex-center;
+    gap: 1vw;
+
+    @include mobile {
+      gap: $spacing-sm;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+.phone {
+  &__number {
+    font-size: 1vw;
+
+    @include mobile {
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+  }
+}
+
+.social {
+  &__text {
+    font-size: 1vw;
+
+    @include mobile {
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-right: $spacing-xs;
+    }
+  }
+
+  &__icon {
+    transition: transform $transition;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+
+// Subbanner styles
+.subbanner {
+  &__container {
+    @include flex-center;
+    gap: 4rem;
+    padding: $spacing-md;
+    background: linear-gradient(
+      180deg,
+      $secondary-color 0%,
+      $background-color 100%
+    );
+    padding-top: 100px;
+
+    @include mobile {
+      flex-direction: column;
+      gap: $spacing-lg;
+      padding: $spacing-md $spacing-sm;
+      padding-top: $spacing-md;
+    }
+  }
+
+  &__content {
+    @include flex-column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: $spacing-md;
+    background-color: $background-color;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    width: 100%;
+    max-width: 650px;
+
+    @include mobile {
+      padding: $spacing-lg $spacing-md;
+      margin: 0 $spacing-sm;
+    }
+  }
+
+  &__title {
+    font-size: 2rem;
+    color: $primary-color;
+    text-align: center;
+
+    @include mobile {
+      font-size: 1.4rem;
+      margin-bottom: $spacing-sm;
+    }
+  }
+
+  &__subtitle {
+    font-size: 1rem;
+    color: $secondary-color;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.5;
+
+    @include mobile {
+      font-size: 0.85rem;
+      margin-bottom: $spacing-sm;
+    }
+  }
+
+  &__description {
+    font-size: 1rem;
+    color: $text-color;
+    text-align: center;
+    margin-top: $spacing-sm;
+    line-height: 1.5;
+
+    @include mobile {
+      font-size: 0.85rem;
+      line-height: 1.4;
+    }
+  }
+
+  &__additional-info {
+    font-size: 0.8rem;
+    text-align: center;
+    margin-top: $spacing-sm;
+  }
+
+  &__img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+
+    @include mobile {
+      max-width: 100%;
+      order: 1;
+    }
+  }
+}

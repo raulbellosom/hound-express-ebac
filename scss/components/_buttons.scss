@@ -1,0 +1,43 @@
+// Button components
+.btn {
+  @include button-base;
+
+  &--primary {
+    background-color: $secondary-color;
+    color: $background-color;
+
+    &:hover {
+      background-color: #5ab8e0;
+    }
+  }
+
+  &--secondary {
+    background-color: $primary-color;
+    color: $background-color;
+
+    &:hover {
+      background-color: #0b2a4a;
+    }
+  }
+
+  &--search {
+    padding: $spacing-sm $spacing-md;
+    background-color: $secondary-color;
+    color: $background-color;
+
+    &:hover {
+      background-color: #5ab8e0;
+    }
+  }
+
+  &--guide {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    background-color: $secondary-color;
+    color: $background-color;
+
+    &:hover {
+      background-color: #5ab8e0;
+    }
+  }
+}

@@ -1,0 +1,37 @@
+// Colors
+$primary-color: #091e3f;
+$secondary-color: #6ac6de;
+$background-color: #ffffff;
+$text-color: #6c757d;
+
+// Status Colors
+$status-pending: #ffc107;
+$status-in-transit: #17a2b8;
+$status-delivered: #28a745;
+
+// Font
+$font-family: "Open Sans", sans-serif;
+
+// Border & Effects
+$border-radius: 10px;
+$box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+$box-shadow-hover: 0px 8px 30px rgba(0, 0, 0, 0.2);
+$transition: 0.3s ease;
+
+// Breakpoints
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+$breakpoint-large: 1200px;
+
+// Spacing
+$spacing-xs: 5px;
+$spacing-sm: 10px;
+$spacing-md: 20px;
+$spacing-lg: 40px;
+$spacing-xl: 60px;
+
+// Z-index
+$z-index-base: 1;
+$z-index-modal: 1000;
+$z-index-overlay: 1001;
