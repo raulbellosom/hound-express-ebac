@@ -11,42 +11,47 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="./scss/main.css" />
+    <link rel="stylesheet" href="./css/main.css" />
   </head>
   <body>
-    <!-- Header Section -->
-    <header id="header" class="header">
-      <!-- Top Section: Logo and Navigation -->
-      <div class="header__top">
-        <div class="header__logo">
+    <!-- Navigation Section -->
+    <nav id="navbar" class="navbar">
+      <div class="navbar__container">
+        <div class="navbar__logo">
           <img
             src="./img/hound-express-logo-alter.png"
             alt="Logo Hound Express"
           />
         </div>
-        <nav class="nav__main">
-          <ul class="nav__list">
-            <li class="nav__item">
-              <a href="#home" class="nav__link">Inicio</a>
+        <div class="navbar__nav">
+          <ul class="navbar__list">
+            <li class="navbar__item">
+              <a href="#home" class="navbar__link">Inicio</a>
             </li>
-            <li class="nav__item">
-              <a href="#register" class="nav__link">Registro de Guías</a>
+            <li class="navbar__item">
+              <a href="#general-status" class="navbar__link">Estado General</a>
             </li>
-            <li class="nav__item">
-              <a href="#general-status" class="nav__link">Estado General</a>
+            <li class="navbar__item">
+              <a href="#guide-list" class="navbar__link">Lista de Guías</a>
             </li>
-            <li class="nav__item">
-              <a href="#guide-list" class="nav__link">Lista de Guías</a>
+            <!-- <li class="navbar__item">
+              <a href="#search-guide" class="navbar__link">Buscar Guías</a>
             </li>
-            <li class="nav__item">
-              <a href="#search-guide" class="nav__link">Buscar Guías</a>
-            </li>
-            <li class="nav__item">
-              <a href="#guide-history" class="nav__link">Historial de Guías</a>
-            </li>
+            <li class="navbar__item">
+              <a href="#guide-history" class="navbar__link"
+                >Historial de Guías</a
+              >
+            </li> -->
           </ul>
-        </nav>
+          <button id="registerBtn" class="btn btn--register">
+            Registrar Guía
+          </button>
+        </div>
       </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="header">
       <!-- Banner Section: Banner Image and Contact Info -->
       <div class="banner__container">
         <div class="header__banner">
@@ -112,98 +117,6 @@
     </header>
     <!-- Main Content -->
     <main>
-      <section id="register" class="register">
-        <!-- Registro de Guías -->
-        <div class="register__image"></div>
-        <div class="form__container">
-          <h2 class="form__title">Registro de Guías</h2>
-          <p class="form__subtitle">
-            Completa el siguiente formulario para registrar una nueva guía.
-          </p>
-          <form class="form__content" action="#" method="POST">
-            <div class="form__group">
-              <label for="guide-name" class="form__label"
-                >Número de guía:</label
-              >
-              <input
-                type="text"
-                id="guide-name"
-                name="guide-name"
-                class="form__input"
-                required
-              />
-            </div>
-            <div class="form__inputs-group">
-              <div class="form__group">
-                <label for="guide-lastname" class="form__label">Origen:</label>
-                <input
-                  type="text"
-                  id="guide-lastname"
-                  name="guide-lastname"
-                  class="form__input"
-                  required
-                />
-              </div>
-              <div class="form__group">
-                <label for="guide-address" class="form__label">Destino:</label>
-                <input
-                  type="text"
-                  id="guide-address"
-                  name="guide-address"
-                  class="form__input"
-                  required
-                />
-              </div>
-            </div>
-            <!-- destinatario -->
-            <div class="form__group">
-              <label for="guide-recipient" class="form__label"
-                >Destinatario:</label
-              >
-              <input
-                type="text"
-                id="guide-recipient"
-                name="guide-recipient"
-                class="form__input"
-                required
-              />
-            </div>
-            <!-- fecha de creacion -->
-            <div class="form__inputs-group">
-              <div class="form__group">
-                <label for="guide-date" class="form__label"
-                  >Fecha de creación:</label
-                >
-                <input
-                  type="date"
-                  id="guide-date"
-                  name="guide-date"
-                  class="form__input"
-                  required
-                />
-              </div>
-              <!-- select (pendiente, en transito, entregado) -->
-
-              <div class="form__group">
-                <label for="guide-status" class="form__label">Estado:</label>
-                <select
-                  id="guide-status"
-                  name="guide-status"
-                  class="form__input"
-                  required
-                >
-                  <option value="pendiente">Pendiente</option>
-                  <option value="en_transito">En Tránsito</option>
-                  <option value="entregado">Entregado</option>
-                </select>
-              </div>
-            </div>
-            <button type="submit" class="btn btn--primary">
-              Registrar Guía
-            </button>
-          </form>
-        </div>
-      </section>
       <section id="general-status" class="stats">
         <!-- Estado General -->
         <div class="stats__container">
@@ -217,6 +130,10 @@
             <div class="stats__card">
               <h3 class="stats__card-title">Total de Guías Activas</h3>
               <p class="stats__card-value">100</p>
+            </div>
+            <div class="stats__card">
+              <h3 class="stats__card-title">Guías Pendientes</h3>
+              <p class="stats__card-value">20</p>
             </div>
             <div class="stats__card">
               <h3 class="stats__card-title">Guías en Tránsito</h3>
@@ -248,6 +165,12 @@
               />
               <button type="submit" class="btn btn--search">Buscar</button>
             </form>
+            <button
+              id="registerBtnList"
+              class="btn btn--register btn--register-list"
+            >
+              Registrar Nueva Guía
+            </button>
           </div>
           <table class="table table--guide-list">
             <thead>
@@ -389,5 +312,115 @@
         </div>
       </div>
     </footer>
+
+    <!-- Modal de Registro de Guías -->
+    <div id="registerModal" class="modal">
+      <div class="modal__content">
+        <div class="modal__header">
+          <h2 class="modal__title">Registro de Guías</h2>
+          <button class="btn btn--close" id="closeModal">&times;</button>
+        </div>
+        <div class="modal__body">
+          <p class="form__subtitle">
+            Completa el siguiente formulario para registrar una nueva guía.
+          </p>
+          <form id="guideForm" class="form__content">
+            <div class="form__group">
+              <label for="guideNumber" class="form__label"
+                >Número de guía:</label
+              >
+              <input
+                type="text"
+                id="guideNumber"
+                name="guideNumber"
+                class="form__input"
+                required
+              />
+              <span class="form__error" id="guideNumberError"></span>
+            </div>
+            <div class="form__inputs-group">
+              <div class="form__group">
+                <label for="origin" class="form__label">Origen:</label>
+                <input
+                  type="text"
+                  id="origin"
+                  name="origin"
+                  class="form__input"
+                  required
+                />
+                <span class="form__error" id="originError"></span>
+              </div>
+              <div class="form__group">
+                <label for="destination" class="form__label">Destino:</label>
+                <input
+                  type="text"
+                  id="destination"
+                  name="destination"
+                  class="form__input"
+                  required
+                />
+                <span class="form__error" id="destinationError"></span>
+              </div>
+            </div>
+            <div class="form__group">
+              <label for="recipient" class="form__label">Destinatario:</label>
+              <input
+                type="text"
+                id="recipient"
+                name="recipient"
+                class="form__input"
+                required
+              />
+              <span class="form__error" id="recipientError"></span>
+            </div>
+            <div class="form__inputs-group">
+              <div class="form__group">
+                <label for="creationDate" class="form__label"
+                  >Fecha de creación:</label
+                >
+                <input
+                  type="date"
+                  id="creationDate"
+                  name="creationDate"
+                  class="form__input"
+                  required
+                />
+                <span class="form__error" id="creationDateError"></span>
+              </div>
+              <div class="form__group">
+                <label for="status" class="form__label">Estado:</label>
+                <select id="status" name="status" class="form__input" required>
+                  <option value="">Seleccionar estado</option>
+                  <option value="pendiente">Pendiente</option>
+                  <option value="en_transito">En Tránsito</option>
+                  <option value="entregado">Entregado</option>
+                </select>
+                <span class="form__error" id="statusError"></span>
+              </div>
+            </div>
+            <button type="submit" class="btn btn--primary">
+              Registrar Guía
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal de Historial -->
+    <div id="historyModal" class="modal">
+      <div class="modal__content">
+        <div class="modal__header">
+          <h2 class="modal__title">Historial de Cambios</h2>
+          <button class="btn btn--close" id="closeHistoryModal">&times;</button>
+        </div>
+        <div class="modal__body">
+          <div id="historyContent">
+            <!-- Contenido del historial se llena dinámicamente -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/script.js"></script>
   </body>
 </html>

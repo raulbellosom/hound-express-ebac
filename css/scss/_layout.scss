@@ -1,0 +1,695 @@
+// Layout styles - Navbar, Header, Main, Footer
+body.navbar-sticky {
+  padding-top: 70px;
+
+  @include mobile {
+    padding-top: 100px;
+  }
+}
+
+// Navbar (separada del header)
+.navbar {
+  width: 100%;
+  background-color: $primary-color;
+  transition: all $transition;
+  z-index: 100;
+
+  &--sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: $box-shadow;
+
+    .navbar__container {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: $spacing-sm $spacing-md;
+
+      @include mobile {
+        flex-direction: column;
+        gap: $spacing-sm;
+        padding: $spacing-sm;
+      }
+    }
+
+    .navbar__logo img {
+      max-width: 120px;
+
+      @include mobile {
+        max-width: 100px;
+      }
+    }
+
+    .navbar__nav {
+      padding: 0;
+    }
+
+    .btn--register {
+      padding: $spacing-xs $spacing-sm;
+      font-size: 0.9rem;
+    }
+  }
+
+  &__container {
+    background-color: $primary-color;
+    color: $background-color;
+    padding: $spacing-sm 0;
+    text-align: center;
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $spacing-sm;
+    transition: all $transition;
+
+    @include mobile {
+      padding: $spacing-md;
+    }
+  }
+
+  &__logo {
+    img {
+      max-width: 200px;
+      min-width: 100px;
+      width: 100%;
+      height: auto;
+      transition: all $transition;
+
+      @include mobile {
+        max-width: 120px;
+      }
+    }
+  }
+
+  &__nav {
+    padding: $spacing-sm $spacing-md;
+    @include flex-center;
+    transition: all $transition;
+    justify-content: space-between;
+
+    @include mobile {
+      flex-direction: column;
+      gap: $spacing-xs;
+      width: 100%;
+    }
+  }
+
+  &__list {
+    display: flex;
+    list-style: none;
+
+    @include mobile {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: $spacing-xs;
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  &__item {
+    margin: 0 1rem;
+
+    @include mobile {
+      margin: 0;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    color: $background-color;
+    transition: color $transition;
+    display: block;
+
+    &:hover {
+      color: $secondary-color;
+    }
+
+    @include mobile {
+      font-size: 0.9rem;
+      padding: $spacing-xs;
+      border-radius: 4px;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+    }
+  }
+}
+
+// Header (solo banner y contenido)
+.header {
+  width: 100%;
+  position: relative;
+
+  &__banner {
+    @include flex-center;
+    justify-content: start;
+    position: relative;
+
+    @include mobile {
+      flex-direction: column;
+    }
+  }
+}
+
+.banner {
+  &__container {
+    width: 100%;
+
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__image-container {
+    width: 100%;
+    position: relative;
+
+    @include mobile {
+      order: 1;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+    display: block;
+
+    @include mobile {
+      max-height: 250px;
+      object-fit: cover;
+    }
+  }
+
+  &__contact {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    color: $background-color;
+    padding: 1vw $spacing-sm;
+    border-radius: $border-radius;
+    font-size: 1vw;
+    text-transform: uppercase;
+    @include flex-center;
+    gap: 4vw;
+    cursor: pointer;
+    transition: background-color $transition;
+    z-index: 2;
+
+    @include mobile {
+      position: static;
+      transform: none;
+      flex-direction: column;
+      gap: $spacing-sm;
+      padding: $spacing-md;
+      font-size: 0.85rem;
+      background-color: $primary-color;
+      border-radius: 0;
+      order: 2;
+      width: 100%;
+    }
+  }
+
+  &__icon {
+    background: $background-color;
+    padding: 0.3vw;
+    border-radius: 50%;
+    width: 2.4vw;
+    height: auto;
+
+    @include mobile {
+      width: 25px;
+      height: 25px;
+      padding: 3px;
+    }
+  }
+}
+
+.contact {
+  &__phone {
+    @include flex-center;
+    gap: $spacing-sm;
+    text-decoration: none;
+    color: $background-color;
+
+    @include mobile {
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+
+  &__social {
+    @include flex-center;
+    gap: 1vw;
+
+    @include mobile {
+      gap: $spacing-sm;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+.phone {
+  &__number {
+    font-size: 1vw;
+
+    @include mobile {
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+  }
+}
+
+.social {
+  &__text {
+    font-size: 1vw;
+
+    @include mobile {
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-right: $spacing-xs;
+    }
+  }
+
+  &__icon {
+    transition: transform $transition;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.subbanner {
+  &__container {
+    @include flex-center;
+    gap: 4rem;
+    padding: $spacing-md;
+    background: linear-gradient(
+      180deg,
+      $secondary-color 0%,
+      $background-color 100%
+    );
+    padding-top: 100px;
+
+    @include mobile {
+      flex-direction: column;
+      gap: $spacing-lg;
+      padding: $spacing-md $spacing-sm;
+      padding-top: $spacing-md;
+    }
+  }
+
+  &__content {
+    @include flex-column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: $spacing-md;
+    background-color: $background-color;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    width: 100%;
+    max-width: 650px;
+
+    @include mobile {
+      padding: $spacing-lg $spacing-md;
+      margin: 0 $spacing-sm;
+    }
+  }
+
+  &__title {
+    font-size: 2rem;
+    color: $primary-color;
+    text-align: center;
+
+    @include mobile {
+      font-size: 1.4rem;
+      margin-bottom: $spacing-sm;
+    }
+  }
+
+  &__subtitle {
+    font-size: 1rem;
+    color: $secondary-color;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.5;
+
+    @include mobile {
+      font-size: 0.85rem;
+      margin-bottom: $spacing-sm;
+    }
+  }
+
+  &__description {
+    font-size: 1rem;
+    color: $text-color;
+    text-align: center;
+    margin-top: $spacing-sm;
+    line-height: 1.5;
+
+    @include mobile {
+      font-size: 0.85rem;
+      line-height: 1.4;
+    }
+  }
+
+  &__additional-info {
+    font-size: 0.8rem;
+    text-align: center;
+    margin-top: $spacing-sm;
+  }
+
+  &__img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+
+    @include mobile {
+      max-width: 100%;
+      order: 1;
+    }
+  }
+}
+
+main {
+  width: 100%;
+}
+
+.section {
+  padding: 5vh $spacing-md;
+
+  @include mobile {
+    padding: $spacing-lg $spacing-sm;
+  }
+
+  &--gray {
+    background-color: #f9f9f9;
+  }
+}
+
+.register {
+  display: flex;
+  justify-items: center;
+  padding: 10vh;
+
+  @include mobile {
+    flex-direction: column;
+    padding: $spacing-lg $spacing-sm;
+  }
+
+  &__image {
+    width: 100%;
+    max-width: 50%;
+    height: auto;
+    @include flex-center;
+    background-image: url("../img/register_guides.jpg");
+    background-size: cover;
+    background-position: center;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+
+    @include mobile {
+      max-width: 100%;
+      border-radius: $border-radius;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      min-height: 200px;
+    }
+  }
+}
+
+.stats {
+  padding: 5vh $spacing-md;
+  background-color: #f9f9f9;
+
+  @include mobile {
+    padding: $spacing-lg $spacing-sm;
+  }
+
+  &__container {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  &__title {
+    font-size: 2.5rem;
+    color: $primary-color;
+    margin-bottom: 1rem;
+
+    @include mobile {
+      font-size: 2rem;
+    }
+  }
+
+  &__description {
+    font-size: 1.2rem;
+    color: $text-color;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+
+    @include mobile {
+      font-size: 1rem;
+      margin-bottom: $spacing-md;
+    }
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    @include mobile {
+      grid-template-columns: repeat(2, 1fr);
+      gap: $spacing-md;
+    }
+  }
+
+  &__card {
+    @include card-base;
+    text-align: center;
+
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: $box-shadow-hover;
+    }
+
+    @include mobile {
+      padding: $spacing-md;
+    }
+  }
+
+  &__card-title {
+    font-size: 1.5rem;
+    color: $secondary-color;
+    margin-bottom: $spacing-sm;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    @include mobile {
+      font-size: 1.2rem;
+    }
+  }
+
+  &__card-value {
+    font-size: 2.5rem;
+    color: $primary-color;
+    font-weight: bold;
+
+    @include mobile {
+      font-size: 2rem;
+    }
+  }
+}
+
+.guide-list {
+  padding: 5vh $spacing-md 15vh;
+  background-color: #f9f9f9;
+
+  @include mobile {
+    padding: $spacing-lg $spacing-sm;
+    background-color: #f5f5f5;
+  }
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  &__title {
+    font-size: 2.5rem;
+    color: $primary-color;
+    margin-bottom: 1rem;
+
+    @include mobile {
+      font-size: 2rem;
+    }
+  }
+
+  &__description {
+    font-size: 1.2rem;
+    color: $text-color;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+
+    @include mobile {
+      font-size: 1rem;
+      margin-bottom: $spacing-md;
+    }
+  }
+
+  &__search {
+    margin-bottom: $spacing-md;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: $spacing-md;
+    width: 100%;
+
+    @include mobile {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+
+  &__form {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    gap: $spacing-sm;
+    flex: 1;
+
+    @include mobile {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    max-width: 400px;
+    padding: $spacing-sm;
+    border: 1px solid #ccc;
+    border-radius: $border-radius;
+    font-size: 1rem;
+    transition: border-color $transition;
+
+    &:focus {
+      border-color: $secondary-color;
+      outline: none;
+    }
+
+    @include mobile {
+      max-width: 100%;
+    }
+  }
+}
+
+.footer {
+  background-color: $primary-color;
+  color: $background-color;
+  text-align: center;
+  font-size: 0.9rem;
+  position: relative;
+  z-index: $z-index-base;
+  padding: $spacing-md 0;
+
+  &__container {
+    margin: 0 auto;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 15px;
+
+    @include mobile {
+      gap: $spacing-sm;
+    }
+  }
+
+  &__copyright {
+    font-size: 1rem;
+    color: $background-color;
+
+    @include mobile {
+      font-size: 0.9rem;
+    }
+  }
+
+  &__links {
+    display: flex;
+    gap: $spacing-md;
+
+    @include mobile {
+      flex-direction: column;
+      gap: $spacing-sm;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $secondary-color;
+    font-size: 0.9rem;
+    transition: color $transition;
+
+    &:hover {
+      color: #5ab8e0;
+    }
+  }
+
+  &__social {
+    @include flex-center;
+    gap: $spacing-sm;
+    flex-wrap: wrap;
+
+    @include mobile {
+      flex-direction: row;
+      gap: $spacing-sm;
+      justify-content: center;
+    }
+  }
+
+  &__social-text {
+    font-size: 0.9rem;
+    color: $background-color;
+    margin-right: $spacing-xs;
+
+    @include mobile {
+      width: 100%;
+      text-align: center;
+      margin-bottom: $spacing-xs;
+      margin-right: 0;
+    }
+  }
+
+  &__social-link {
+    display: inline-block;
+    transition: transform $transition;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    @include mobile {
+      margin: 0 $spacing-xs;
+    }
+  }
+}
