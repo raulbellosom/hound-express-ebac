@@ -822,6 +822,18 @@ main {
   width: 100%;
   max-width: 700px;
 }
+@media (max-width: 480px) {
+  .form__content .btn {
+    width: 100%;
+    padding: 20px;
+    font-size: 1.1rem;
+    margin-top: 10px;
+    position: sticky;
+    bottom: 0;
+    background-color: #6ac6de;
+    z-index: 10;
+  }
+}
 .form__group {
   display: flex;
   flex-direction: column;
@@ -837,6 +849,15 @@ main {
   .form__inputs-group {
     flex-direction: column;
     gap: 0;
+  }
+}
+@media (max-width: 480px) {
+  .form__inputs-group--inline-mobile {
+    flex-direction: row;
+    gap: 10px;
+  }
+  .form__inputs-group--inline-mobile .form__group {
+    flex: 1;
   }
 }
 .form__title {
@@ -879,6 +900,13 @@ main {
 }
 .form__input--error {
   border-color: #e74c3c;
+}
+@media (max-width: 480px) {
+  .form__input {
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
 }
 .form__button {
   border: none;
@@ -1070,12 +1098,15 @@ main {
   overflow-y: auto;
   position: relative;
   animation: slideIn 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 @media (max-width: 480px) {
   .modal__content {
-    padding: 20px;
+    padding: 20px 10px;
     width: 95%;
     max-height: 95vh;
+    margin: 10px;
   }
 }
 .modal__header {
@@ -1098,6 +1129,13 @@ main {
 }
 .modal__body {
   margin-bottom: 20px;
+  flex: 1;
+  overflow-y: auto;
+}
+@media (max-width: 480px) {
+  .modal__body {
+    margin-bottom: 10px;
+  }
 }
 
 @keyframes fadeIn {
