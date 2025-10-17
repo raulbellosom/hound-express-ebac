@@ -323,6 +323,7 @@ function updateStats() {
   const totalActive = guides.filter(
     (guide) => guide.status !== "entregado"
   ).length;
+  const pending = guides.filter((guide) => guide.status === "pendiente").length;
   const inTransit = guides.filter(
     (guide) => guide.status === "en_transito"
   ).length;
@@ -335,9 +336,12 @@ function updateStats() {
   ).textContent = totalActive;
   document.querySelector(
     ".stats__card:nth-child(2) .stats__card-value"
-  ).textContent = inTransit;
+  ).textContent = pending;
   document.querySelector(
     ".stats__card:nth-child(3) .stats__card-value"
+  ).textContent = inTransit;
+  document.querySelector(
+    ".stats__card:nth-child(4) .stats__card-value"
   ).textContent = delivered;
 }
 
